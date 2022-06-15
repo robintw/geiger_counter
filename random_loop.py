@@ -2,12 +2,12 @@ import RPi.GPIO as GPIO
 import time
 
 CHANNEL = 26
-MAX_VALUE = 128
+MAX_VALUE = 256
 
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(CHANNEL, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.add_event_detect(CHANNEL, GPIO.FALLING)
+GPIO.add_event_detect(CHANNEL, GPIO.FALLING, bouncetime=100)
 
 count = 0
 while True:
