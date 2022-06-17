@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 CHANNEL = 26
-MAX_VALUE = 256
+MAX_VALUE = 16
 
 GPIO.setmode(GPIO.BCM)
 
