@@ -26,9 +26,13 @@ try:
                 value2 = count
 
             if value1 is not None and value2 is not None:
+                print(bin(value1))
+                print(bin(value2))
                 byte_value = (value1 << 4) | value2
                 print(byte_value)
                 bytes_list.append(byte_value)
+                value1 = None
+                value2 = None
 except KeyboardInterrupt:
     print(f"Writing output to {output_filename}")
     with open(output_filename, 'wb') as f:
