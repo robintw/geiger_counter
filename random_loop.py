@@ -7,11 +7,11 @@ MAX_VALUE = 16
 
 base_filename = sys.argv[1]
 
-file_id = 1
+FILE_ID = 1
 
 def write_file(bytes_list, base_filename):
-    output_filename = base_filename + "_" + str(file_id)
-    file_id += 1
+    output_filename = base_filename + "_" + str(FILE_ID)
+    FILE_ID = FILE_ID + 1
     print(f"Writing output to {output_filename}")
     with open(output_filename, 'wb') as f:
         f.write(bytes(bytes_list))
