@@ -5,12 +5,12 @@ import sys
 CHANNEL = 26
 MAX_VALUE = 16
 
-output_filename = sys.argv[1]
+base_filename = sys.argv[1]
 
 file_id = 1
 
-def write_file(bytes_list):
-    output_filename = output_filename + "_" + str(file_id)
+def write_file(bytes_list, base_filename):
+    output_filename = base_filename + "_" + str(file_id)
     file_id += 1
     print(f"Writing output to {output_filename}")
     with open(output_filename, 'wb') as f:
@@ -44,8 +44,8 @@ try:
                 value2 = None
 
                 if len(bytes_list) >= 1024:
-                    write_file(bytes_list)
+                    write_file(bytes_list, base_filename)
                     bytes_list = []
 except KeyboardInterrupt:
-    write_file(bytes_list)
+    write_file(bytes_list, base_filename)
             
